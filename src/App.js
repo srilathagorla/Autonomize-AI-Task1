@@ -83,16 +83,17 @@ const App = () => {
   };
 
   return (
-    <div className="todo-container">
-      <h1 className="heading">Day Goals!</h1>
-      <div className="add-task">
+    <div className="bg-container">
+      <h1 className="day-heading">Day Goals!</h1>
+      <div className="container">
         <input
           type="text"
           value={taskInput}
           onChange={(e) => setTaskInput(e.target.value)}
-          placeholder="Add a todo"
+          placeholder="Add a Todo"
+          className='todo-input'
         />
-        <button onClick={addOrUpdateTask}>
+        <button onClick={addOrUpdateTask} className='add-btn'>
           {editingTask !== null ? 'Update' : 'Add Todo'}
         </button>
       </div>
@@ -102,16 +103,17 @@ const App = () => {
             <span onClick={() => startEditingTask(task.id)}>
               {task.name}  (Updated {task.updates} times)
             </span>
+            <div className='todo-container'>
             <span className="edit-icon" onClick={() => startEditingTask(task.id)}>
             <span role="img" aria-label="edit" style={{ color: 'white' }}>
-              ✏️
+            ✏️
             </span>
             </span>
             <span className="delete-icon" onClick={() => deleteTask(task.id)}>
               <span role="img" aria-label="delete" style={{ color: 'red', margin: '0' }}>
                 ❌
               </span>
-            </span>
+            </span></div>
           </div>
         ))}
       </div>
@@ -119,4 +121,4 @@ const App = () => {
   );
 };
 
-export default App;
+export default App;
