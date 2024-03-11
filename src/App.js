@@ -58,7 +58,7 @@ const App = () => {
             id: taskCounter + index,
             name: taskName,
             quantity: taskQuantity,
-            updates: 1,
+            updates: 0,
           })
         );
 
@@ -106,7 +106,7 @@ const App = () => {
             <div className='todo-container'>
             <span className="edit-icon" onClick={() => startEditingTask(task.id)}>
             <span role="img" aria-label="edit" style={{ color: 'white' }}>
-            ✏️
+              ✏️
             </span>
             </span>
             <span className="delete-icon" onClick={() => deleteTask(task.id)}>
@@ -121,4 +121,4 @@ const App = () => {
   );
 };
 
-export default App;
+export default App;
